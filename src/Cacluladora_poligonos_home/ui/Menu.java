@@ -44,29 +44,30 @@ public class Menu {
 				
 			} else if (opcao == 2) {
 				Retangulodao retangulodao = new Retangulodao();
+				retangulodao.criarRetangulo();
 			
 			} else if (opcao == 3) {
-				Triangulodao triangulodao = new Triangulodao();			
+				Triangulodao triangulodao = new Triangulodao();	
+				triangulodao.criarTriangulo();
 			
 			} else if (opcao == 4) {
 				Trapeziodao trapeziodao = new Trapeziodao();
+				trapeziodao.criarTrapezio();
 				
 			} else if (opcao == 5) {
 				Circunferenciadao circunferenciadao = new Circunferenciadao();
+				circunferenciadao.criarCincunferencia();
 			
 			} else {
 				Menu menu = new Menu();
 				menu.loopResposta();
 			}
 			
-			
 		
 	}
 	
-	public void loopResposta() {
-		System.out.println("ERROR! Resposta inválida!");
-		System.out.println("");
-		System.out.println("Gostaria de continuar?");
+	public void repetirCalculos() {
+		System.out.println("Gostaria de realizar mais algum cálculo?");
 		System.out.print("S / N: ");
 		
 		String resposta = reader.next();
@@ -76,6 +77,30 @@ public class Menu {
 			menu.mostrarMenu();
 			
 		} else if (resposta.equals("n")) {
+			System.out.println("");
+			System.out.println("Ok, tenha um bom dia!");
+			
+		} else {
+			Menu menu = new Menu();
+			menu.loopResposta();
+		}
+	
+	}
+	
+	public void loopResposta() {
+		System.out.println("ERROR! Resposta inválida!");
+		System.out.println("");
+		System.out.println("Gostaria de tentar novamente?");
+		System.out.print("S / N: ");
+		
+		String resposta = reader.next();
+		
+		if (resposta.equals("s")) {
+			Menu menu = new Menu();
+			menu.mostrarMenu();
+			
+		} else if (resposta.equals("n")) {
+			System.out.println("");
 			System.out.println("Ok, tenha um bom dia!");
 			
 		} else {

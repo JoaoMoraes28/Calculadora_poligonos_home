@@ -26,6 +26,7 @@ public class Quadradodao {
 			double lado = quadrado.setLado(reader.nextDouble());
 			if (lado >= 0) {
 				quadrado.mostrarDados();
+				finalizarSeçao();
 			
 			} else {
 				redirecionarMenu();
@@ -40,5 +41,10 @@ public class Quadradodao {
 	public void redirecionarMenu() {
 		Menu menu = new Menu();
 		menu.loopResposta();
+	}
+	
+	public void finalizarSeçao() {
+		Menu menu = new Menu();
+		menu.repetirCalculos();
 	}
 }
