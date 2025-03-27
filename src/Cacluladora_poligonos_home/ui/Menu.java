@@ -67,24 +67,26 @@ public class Menu {
 	}
 	
 	public void repetirCalculos() {
-		System.out.println("Gostaria de realizar mais algum cálculo?");
-		System.out.print("S / N: ");
+		String resposta = "";
 		
-		String resposta = reader.next();
+		while (!resposta.equalsIgnoreCase("s") && !resposta.equalsIgnoreCase("n")) {
+			System.out.println("Gostaria de repetir os cálculos?");
+			System.out.print("S / N: ");
 		
-		if (resposta.equals("s")) {
+			resposta = reader.next();
+		
+		}
+		
+		if (resposta.equalsIgnoreCase("s")) {
 			Menu menu = new Menu();
 			menu.mostrarMenu();
 			
-		} else if (resposta.equals("n")) {
-			System.out.println("");
+		} if (resposta.equalsIgnoreCase("n")) {
 			System.out.println("Ok, tenha um bom dia!");
 			
-		} else {
-			Menu menu = new Menu();
-			menu.loopResposta();
 		}
-	
+		
+		
 	}
 	
 	public void loopResposta() {
